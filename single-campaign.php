@@ -29,19 +29,8 @@ if ( $campaign_template ) {
 // Save custom style settings.
 $custom_styles = [];
 
-// Set specific CSS for Montserrat.
 $pf = $post->campaign_header_primary;
-
-$header_font_style = [
-	'Montserrat'       => "font-family: 'Montserrat' !important; font-weight: 900 !important;",
-	'Montserrat_Light' => "font-family: 'Montserrat' !important; font-weight: 500 !important;",
-];
-
-if ( $pf && array_key_exists( $pf, $header_font_style ) ) {
-	$header_font = $header_font_style[ $pf ];
-} else {
-	$header_font = "font-family: {$pf} !important;";
-}
+$header_font = "font-family: {$pf} !important;";
 
 $footer_links_color = 'light' === $post->campaign_logo_color ? '#FFFFFF' : '#1A1A1A';
 
