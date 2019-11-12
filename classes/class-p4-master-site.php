@@ -392,6 +392,8 @@ class P4_Master_Site extends TimberSite {
 	 */
 	public function set_custom_allowed_attributes_filter( $allowedposttags ) {
 		// Allow iframes and the following attributes.
+		$allowedposttags['style'] = array();
+
 		$allowedposttags['iframe'] = [
 			'align'           => true,
 			'width'           => true,
@@ -504,7 +506,7 @@ class P4_Master_Site extends TimberSite {
 		wp_enqueue_style( 'bootstrap', $this->theme_dir . '/assets/build/bootstrap.min.css', [], '4.1.1' );
 		wp_enqueue_style( 'slick', 'https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.9.0/slick.min.css', [], '1.9.0' );
 
-		// This loads a linked style file since the relative images paths are outside the build directory
+		// This loads a linked style file since the relative images paths are outside the build directory.
 		wp_enqueue_style( 'parent-style', $this->theme_dir . '/style.css', [], $css_creation );
 
 		// JS files.
